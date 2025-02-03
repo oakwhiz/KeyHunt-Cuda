@@ -19,6 +19,8 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: Jimver/cuda-toolkit@8022558310ea543e35132143092835585f60e628
       uses: Jimver/cuda-toolkit@v0.2.21
+      with:
+        cuda: 11.8
     - name: make
       run: make gpu=1 CCAP=75 all
       working-directory: KeyHunt-Cuda

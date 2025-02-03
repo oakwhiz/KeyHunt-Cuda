@@ -1,0 +1,24 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: install-libs1
+      run: sudo apt install -y libgmp-dev
+    - name: cuda-toolkit
+      # You may pin to the exact commit or the version.
+      # uses: Jimver/cuda-toolkit@8022558310ea543e35132143092835585f60e628
+      uses: Jimver/cuda-toolkit@v0.2.21
+    - name: make
+      run: make gpu=1 CCAP=75 all
+      working-directory: KeyHunt-Cuda

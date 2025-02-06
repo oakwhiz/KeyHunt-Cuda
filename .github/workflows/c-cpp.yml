@@ -23,7 +23,7 @@ jobs:
       # uses: Jimver/cuda-toolkit@8022558310ea543e35132143092835585f60e628
       uses: Jimver/cuda-toolkit@v0.2.21
       with:
-        cuda: '11.0.0'
+        cuda: '11.0.2'
     - name: set-path
       run: echo "/usr/local/cuda-11.0/bin" >> $GITHUB_PATH
     - name: make

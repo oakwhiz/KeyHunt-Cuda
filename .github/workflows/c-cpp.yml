@@ -29,3 +29,8 @@ jobs:
     - name: make
       run: make gpu=1 CCAP=75 all
       working-directory: KeyHunt-Cuda
+    - name: upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: keyhuntcuda-binary
+        path: KeyHunt
